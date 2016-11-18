@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Square</th>
+    <th>Flors</th>
+    <th>price</th>
+  </thead>
+  <tbody>
+    <% @houses.each do |house| %>
+      <tr>
+        <td>
+          <%= house.name %>
+        </td>
+        <td>
+          <%= house.square %>
+        </td>
+        <td>
+          <%= house.flors %>
+        </td>
+        <td>
+          <%= house.price %>
+        </td>
+        <td>
+          <%= link_to 'Show', house %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_house_path(house) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', house_path(house), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Create New House", new_house_path %>

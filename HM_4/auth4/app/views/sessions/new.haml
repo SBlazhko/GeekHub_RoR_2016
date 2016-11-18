@@ -1,0 +1,6 @@
+= form_tag sessions_path  do
+  = text_field_tag :email
+  = password_field_tag :password
+  = submit_tag 'Sign in'
+
+= link_to 'Sign un', sign_up_path

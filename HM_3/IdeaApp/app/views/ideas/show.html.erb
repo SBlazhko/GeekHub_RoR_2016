@@ -1,0 +1,6 @@
+<p>Name: <%= @idea.name %></p>
+<p>Description: <%= @idea.description %></p>
+<p>Autor: <%= @idea.autor %></p>
+<span><%= link_to 'Edit', edit_idea_path(@idea) %></span>
+<span><%= link_to 'Destroy', idea_path(@idea), method: :delete %></span>
+<span><%= link_to 'All Ideas', ideas_path %></span>

@@ -1,0 +1,7 @@
+<p>Name: <%= @house.name %></p>
+<p>Square: <%= @house.square %></p>
+<p>Flors: <%= @house.flors %></p>
+<p>Price: <%= @house.price %></p>
+<span><%= link_to 'Edit', edit_house_path(@house) %></span>
+<span><%= link_to 'Destroy', house_path(@house), method: :delete %></span>
+<span><%= link_to 'All Houses', houses_path %></span>

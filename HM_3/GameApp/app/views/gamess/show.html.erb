@@ -1,0 +1,6 @@
+<p>Name: <%= @game.name %></p>
+<p>Genre: <%= @game.genre %></p>
+<p>Size: <%= @game.size %></p>
+<span><%= link_to 'Edit', edit_gamess_path(@games) %></span>
+<span><%= link_to 'Destroy', gamess_path(@games), method: :delete %></span>
+<span><%= link_to 'All Games', gamess_path %></span>

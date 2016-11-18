@@ -1,0 +1,6 @@
+<p>Name: <%= @city.name %></p>
+<p>Country: <%= @city.country %></p>
+<p>Citizen_count: <%= @city.citizen_count %></p>
+<span><%= link_to 'Edit', edit_city_path(@city) %></span>
+<span><%= link_to 'Destroy', city_path(@city), method: :delete %></span>
+<span><%= link_to 'All Cities', cities_path %></span>

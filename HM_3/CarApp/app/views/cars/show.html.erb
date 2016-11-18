@@ -1,0 +1,6 @@
+<p>Name: <%= @car.name %></p>
+<p>Flors: <%= @car.car_type %></p>
+<p>Price: <%= @car.price %></p>
+<span><%= link_to 'Edit', edit_car_path(@car) %></span>
+<span><%= link_to 'Destroy', car_path(@car), method: :delete %></span>
+<span><%= link_to 'All Houses', cars_path %></span>

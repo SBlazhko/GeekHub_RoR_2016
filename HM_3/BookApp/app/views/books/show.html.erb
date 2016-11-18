@@ -1,0 +1,6 @@
+<p>Name: <%= @book.name %></p>
+<p>Square: <%= @book.autor %></p>
+<p>Flors: <%= @book.pages %></p>
+<span><%= link_to 'Edit', edit_book_path(@book) %></span>
+<span><%= link_to 'Destroy', book_path(@book), method: :delete %></span>
+<span><%= link_to 'All Houses', books_path %></span>

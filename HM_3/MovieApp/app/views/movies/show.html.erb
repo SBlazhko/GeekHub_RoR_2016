@@ -1,0 +1,5 @@
+<p>Name: <%= @movie.name %></p>
+<p>Time: <%= @movie.time %></p>
+<span><%= link_to 'Edit', edit_movie_path(@movie) %></span>
+<span><%= link_to 'Destroy', movie_path(@movie), method: :delete %></span>
+<span><%= link_to 'All Houses', movies_path %></span>

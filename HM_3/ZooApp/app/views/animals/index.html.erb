@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Animal class</th>
+  </thead>
+  <tbody>
+    <% @animals.each do |animal| %>
+      <tr>
+        <td>
+          <%= animal.name %>
+        </td>
+        <td>
+          <%= animal.square %>
+        </td>
+        <td>
+          <%= link_to 'Show', animal %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_animal_path(animal) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', animal_path(animal), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Create New House", new_animal_path %>

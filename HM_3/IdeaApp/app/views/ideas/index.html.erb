@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Autor</th>
+  </thead>
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td>
+          <%= idea.name %>
+        </td>
+        <td>
+          <%= idea.description %>
+        </td>
+        <td>
+          <%= idea.autor %>
+        </td>
+        <td>
+          <%= link_to 'Show', idea %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_idea_path(idea) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', idea_path(idea), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Create New Idea", new_idea_path %>
+

@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Autor</th>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td>
+          <%= post.title %>
+        </td>
+        <td>
+          <%= post.description %>
+        </td>
+        <td>
+          <%= post.autor %>
+        </td>
+        <td>
+          <%= link_to 'Show', post %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_post_path(post) %>
+        </td>
+        <td>
+          <%= link_to 'Destroy', post_path(post), method: :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Create New post", new_post_path %>

@@ -1,0 +1,5 @@
+<p>Name: <%= @animal.name %></p>
+<p>Square: <%= @animal.animal_class %></p>
+<span><%= link_to 'Edit', edit_animal_path(@animal) %></span>
+<span><%= link_to 'Destroy', animal_path(@animal), method: :delete %></span>
+<span><%= link_to 'All Houses', animals_path %></span>
