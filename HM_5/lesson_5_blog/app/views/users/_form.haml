@@ -1,0 +1,27 @@
+%h4
+  %strong
+    Sign up
+= form_for @user do |f|
+  %p
+    = f.label :email
+    = f.email_field :email
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :surname
+    = f.text_field :surname
+  %p
+    = f.label :age
+    = f.number_field :age, in: 18..50, step: 1
+  %p
+    = f.label :password
+    = f.password_field :password
+  %p
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  %p
+    = f.label :avatar
+    = f.file_field :avatar
+  %p 
+    = f.submit "Sign up"

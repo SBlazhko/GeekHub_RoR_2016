@@ -1,0 +1,12 @@
+%h2
+  Post list
+%table
+  %thead
+    %tr
+      %th Post Title
+      %th Writor email
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td post.title
+        %td post.user.email

@@ -1,0 +1,10 @@
+%p
+  = image_tag(@post.image.thumb.url) if @post.image? 
+%p
+  Title: #{@post.title}
+%p
+  Text: #{@post.text}
+%p
+  Author: #{@user.email}
+%p
+  Created_at: #{@post.created_at}

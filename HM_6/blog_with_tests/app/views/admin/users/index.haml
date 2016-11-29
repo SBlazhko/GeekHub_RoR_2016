@@ -1,0 +1,17 @@
+%h2
+  Users list
+%table
+  %thead
+    %tr
+      %th Avatar
+      %th User name
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td 
+          = image_tag(user.avatar.thumb.url) if user.image? 
+        %td #{user.name}
+        %td 
+          = link_to "add admin rule", set_admin_path(user.id), method: :put
+        %td 
+          = link_to "delete", delete_user_path(user.id), method: :delete

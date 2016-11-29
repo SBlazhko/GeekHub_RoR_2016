@@ -1,0 +1,18 @@
+%h2
+  All posts
+%table
+  %thead
+    %tr
+      %th Image
+      %th Title
+      %th Text
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td 
+          = image_tag(post.image.thumb.url) if post.image? 
+        %td #{post.title}
+        %td #{post.text}
+        %td 
+          = link_to "Show", user_post_path(current_user.id, post)
+

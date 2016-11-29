@@ -1,0 +1,21 @@
+%h2
+  My Posts
+%table
+  %thead
+    %tr
+      %th Image
+      %th Title
+      %th Text
+      %th Author
+  %tbody
+    - @my_posts.each do |post|
+      %tr
+        %td 
+          = image_tag(post.image.thumb.url) if post.image? 
+        %td #{post.title}
+        %td #{post.text}
+        - author = User.find(post.user_id)
+        %td "#{author.name} #{author.surname}"
+        %td 
+          = link_to "Show", user_post_path(author.id, post)
+
