@@ -1,0 +1,33 @@
+.container
+  .panel.panel-default{style: "width: 600px; margin-top: 5px;"}
+    .panel-heading Products list :)
+    = form_tag products_path, method: :get do
+      .form-inline{style: "margin: 3px;"}
+        = text_field_tag :search, params[:search], class: "form-control"
+        = submit_tag "Search", :name => nil, class: "btn btn-default"
+    %table.table.table-striped
+      %thead
+        %th #
+        %th name
+        %th price
+        %th created_at
+        %th
+      - @products.each_with_index do |product, index|
+        %tbody
+          %td
+            = index + 1
+          %td 
+            = product.name
+          %td 
+            = "#{product.price} $"
+          %td 
+            = product.created_at.strftime('%b %d %Y')
+          %td
+            = link_to "delete", product_path(product.id), class: "btn btn-sm btn-danger", method: :delete
+
+  = render 'form'
+  = render 'import_dialog'
+  = link_to "Export csv", export_products_path, class: "btn btn-sm btn-primary navbar-btn"
+  .btn.btn-primary.btn-sm{"data-target" => "#productDialog", "data-toggle" => "modal", :type => "button"} Import products
+  %p
+    = paginate @products, theme: 'twitter-bootstrap-3'

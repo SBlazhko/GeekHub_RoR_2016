@@ -1,0 +1,14 @@
+= form_for @product, method: :post do |f|
+  .form-inline
+    .form-group
+      .input-group
+        .input-group-addon Name
+        = f.text_field :name, class: "form-control", placeholder: "Snikers", required: true
+    .form-group
+      .input-group
+        .input-group-addon Price
+        = f.number_field :price, step: 0.5, class: "form-control", placeholder: "0.0", required: true
+    .form-group
+      = f.submit "Add Product", class: "btn btn-primary"
+
+

@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/dsl'
+require 'capybara/poltergeist'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -30,7 +31,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 Capybara.configure do |config|
   config.run_server = false
-  config.default_driver = :selenium
+  config.javascript_driver = :poltergeist
   config.app_host = 'http://localhost:3000'
 end
 
